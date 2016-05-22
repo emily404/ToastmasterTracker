@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     let timePickerData = [
         ["0m","1m","2m","3m","5m","6m","7m"],
@@ -20,6 +20,18 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var fillerCountPicker: UIPickerView!
     
+    var imagePickerController : UIImagePickerController!
+    @IBOutlet var commentsImage: UIImageView!
+    @IBAction func seePhotos(sender: UIButton) {
+        imagePickerController.sourceType = .PhotoLibrary
+        //TODO: add option of taking photo from app
+//        imagePickerController.sourceType = .Camera
+        presentViewController(imagePickerController, animated: true){
+            print("present camera view")
+        }
+    }
+
+    
     //MARK -Instance Methods
     func updateLabel(){
         let min = timePickerData[0][timePicker.selectedRowInComponent(0)]
@@ -29,6 +41,7 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         timePicker.delegate = self
         timePicker.dataSource = self
         fillerCountPicker.delegate = self
@@ -38,12 +51,33 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         timePicker.selectRow(2, inComponent: 1, animated: false)
         fillerCountPicker.selectRow(5, inComponent: 0, animated: false)
         updateLabel()
+        
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        commentsImage.userInteractionEnabled = true
+        commentsImage.addGestureRecognizer(tapGestureRecognizer)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            commentsImage.contentMode = .ScaleAspectFit
+            commentsImage.image = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imageTapped() {
+        print("image tapped")
     }
     
     //MARK -Delgates and DataSource
