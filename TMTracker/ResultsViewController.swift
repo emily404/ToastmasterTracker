@@ -76,8 +76,21 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imageTapped() {
-        print("image tapped")
+    func imageTapped(sender: UITapGestureRecognizer) {
+        //TODO: zoom with UIScrollView
+        let imageView = sender.view as! UIImageView
+        let newImageView = UIImageView(image: imageView.image)
+        newImageView.frame = self.view.frame
+        newImageView.backgroundColor = .blackColor()
+        newImageView.contentMode = .ScaleAspectFit
+        newImageView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        newImageView.addGestureRecognizer(tap)
+        self.view.addSubview(newImageView)
+    }
+    
+    func dismissFullscreenImage(sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
     }
     
     //MARK -Delgates and DataSource
