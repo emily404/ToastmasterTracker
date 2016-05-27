@@ -14,8 +14,8 @@ class SpeechTimerViewController: UIViewController {
     var counter = 0
     var timer = NSTimer()
     var secondsLeft = 450 // 07:30
-    let lightChangeInterval = 3 // in seconds
-    var speechTimeLeft = 10 // 7:00
+    let lightChangeInterval = 60 // in seconds
+    var speechTimeLeft = 420 // 7:00
     var minutesLabel = ""
     var secondsLabel = ""
     let screenSize: CGRect = UIScreen.mainScreen().bounds
@@ -28,13 +28,6 @@ class SpeechTimerViewController: UIViewController {
         
         timer.invalidate()
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-        
-//        let screenWidth = screenSize.width
-//        let screenHeight = screenSize.height
-//        print(screenWidth)
-//        print(screenHeight)
-//        
-//        self.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
         
         trafficLight.backgroundColor = UIColor.greenColor()
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
@@ -64,17 +57,14 @@ class SpeechTimerViewController: UIViewController {
     }
     
     func displayLight() {
-        print(speechTimeLeft)
         if(speechTimeLeft > lightChangeInterval * 2) {
             // display green light
             trafficLight.backgroundColor = UIColor.greenColor()
         } else if(speechTimeLeft > lightChangeInterval && speechTimeLeft <= lightChangeInterval * 2) {
             // display yellow light
             trafficLight.backgroundColor = UIColor.yellowColor()
-            print("yellow")
         } else if(speechTimeLeft == 0) {
             //display red light
-            print("red")
             trafficLight.backgroundColor = UIColor.redColor()
         }
     }
