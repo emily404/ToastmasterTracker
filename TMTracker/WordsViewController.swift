@@ -13,6 +13,9 @@ import Alamofire
 class WordsViewController: UIPageViewController {
     
     var currentPageIndex = 0
+    let words = ["aloha", "merci"]
+    let definitions = ["hello", "thanks"]
+    let sampleSentences = ["aloha aloha", "merci merci"]
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newColoredViewController("firstWord"),
@@ -22,38 +25,66 @@ class WordsViewController: UIPageViewController {
     private func newColoredViewController(color: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil) .
             instantiateViewControllerWithIdentifier("\(color)ViewController")
+            
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dataSource = self
+        delegate = self
+        
+        requestWords()
         
         if let firstViewController = orderedViewControllers.first {
+            
             setViewControllers([firstViewController],
                                direction: .Forward,
                                animated: true,
                                completion: nil)
+
+            updateLabels(firstViewController)
         }
         
-//        Alamofire.request(.GET, "https://httpbin.org/get", parameters: ["foo": "bar"])
-//            .responseJSON { response in
-//                print(response.request)  // original URL request
-//                print(response.response) // URL response
-//                print(response.data)     // server data
-//                print(response.result)   // result of response serialization
-//                
-//                if let JSON = response.result.value {
-//                    print("JSON: \(JSON)")
-//                }
-//        }
-
-        // Do any additional setup after loading the view.
+        // TODO
+        // why is that when i try to update labels both controllers here
+        // only the already accessed controller aka first has non nil labels
+        // second one throws nil error
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func requestWords() {
+        // TODO: request for word of day and set to variable arrays
+        //        Alamofire.request(.GET, "http://api.wordnik.com:80/v4/words.json/wordOfTheDay", parameters: ["api_key": "abab1110bb9971ab2530a00333403761dc891454564ad2f28", "date": "2016-04-27"])
+        //            .responseJSON { response in
+        //                print(response.request)  // original URL request
+        //                print(response.response) // URL response
+        //                print(response.data)     // server data
+        //                print(response.result)   // result of response serialization
+        //
+        //                if let JSON = response.result.value {
+        //                    print("JSON: \(JSON)")
+        //                }
+        //        }
+        
+    }
+    
+    func updateLabels(vc: UIViewController) {
+        if let firstvc = vc as? FirstWordViewController {
+            firstvc.word.text = words[0]
+            firstvc.definition.text = definitions[0]
+            firstvc.sampleSentence.text = sampleSentences[0]
+        }
+        else if let secondvc = vc as? SecondWordViewController {
+            secondvc.word.text = words[1]
+            secondvc.definition.text = definitions[1]
+            secondvc.sampleSentence.text = sampleSentences[1]
+        }
     }
     
     /*
@@ -66,6 +97,18 @@ class WordsViewController: UIPageViewController {
     }
     */
 
+}
+
+// MARK: UIPageViewControllerDelegate
+
+extension WordsViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+        
+        updateLabels(pendingViewControllers.first!)
+
+    }
+    
 }
 
 // MARK: UIPageViewControllerDataSource
