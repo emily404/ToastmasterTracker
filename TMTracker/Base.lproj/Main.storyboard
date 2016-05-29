@@ -224,99 +224,66 @@
             </objects>
             <point key="canvasLocation" x="1642" y="335"/>
         </scene>
-        <!--Words View Controller-->
-        <scene sceneID="cUh-Wu-GYh">
+        <!--Word Content View Controller-->
+        <scene sceneID="8c5-UB-0Bu">
             <objects>
-                <pageViewController storyboardIdentifier="wordsPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="pEC-GW-cLb" customClass="WordsViewController" customModule="TMTracker" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hU5-5p-TA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1631" y="1127"/>
-        </scene>
-        <!--First Word View Controller-->
-        <scene sceneID="Ccv-wr-edh">
-            <objects>
-                <viewController storyboardIdentifier="firstWordViewController" id="Mvv-Rb-yEu" customClass="FirstWordViewController" customModule="TMTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a7B-tL-qri" customClass="WordContentViewController" customModule="TMTracker" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MIf-Zv-uXh"/>
-                        <viewControllerLayoutGuide type="bottom" id="6jx-5o-a9I"/>
+                        <viewControllerLayoutGuide type="top" id="6Yc-iz-W4n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q5s-wF-y39"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ps4-ft-2vt">
+                    <view key="view" contentMode="scaleToFill" id="DIp-Bl-YeZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oVU-YN-r0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="1127"/>
+        </scene>
+        <!--Single Word View Controller-->
+        <scene sceneID="CNJ-o6-zH6">
+            <objects>
+                <viewController storyboardIdentifier="SingleWordViewController" id="j8N-Tf-HMH" customClass="SingleWordViewController" customModule="TMTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PPv-Ir-obF"/>
+                        <viewControllerLayoutGuide type="bottom" id="fRm-oz-dVj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IR4-0C-Ppq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M07-FT-0pQ">
-                                <rect key="frame" x="83" y="113" width="138" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="some word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfO-ni-y0g">
+                                <rect key="frame" x="141" y="167" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Definition" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOe-WY-AHN">
-                                <rect key="frame" x="82" y="249" width="163" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="some definition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWy-mu-5Ui">
+                                <rect key="frame" x="135" y="283" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sample Sentence" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjw-Eu-HNl">
-                                <rect key="frame" x="67" y="385" width="212" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="some sample santence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-rn-fKo">
+                                <rect key="frame" x="124" y="425" width="176" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.59714516042370991" blue="0.74386783155381764" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="definition" destination="cOe-WY-AHN" id="H60-iy-vsn"/>
-                        <outlet property="sampleSentence" destination="mjw-Eu-HNl" id="OPd-gA-ReH"/>
-                        <outlet property="word" destination="M07-FT-0pQ" id="9dW-QA-ocR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0OD-Hi-fFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2324" y="1127"/>
-        </scene>
-        <!--Second Word View Controller-->
-        <scene sceneID="dem-fg-ebn">
-            <objects>
-                <viewController storyboardIdentifier="secondWordViewController" id="55c-CU-olf" customClass="SecondWordViewController" customModule="TMTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UwW-we-nPk"/>
-                        <viewControllerLayoutGuide type="bottom" id="THg-g2-J79"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wSd-Zw-0sy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second word" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5q1-ty-vvZ">
-                                <rect key="frame" x="46" y="138" width="189" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second Sample" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzE-jc-Egx">
-                                <rect key="frame" x="36" y="364" width="207" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second Sentence" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctg-ij-zre">
-                                <rect key="frame" x="36" y="234" width="222" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.73277180580000001" blue="0.15509822030000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.89861326850000001" blue="0.45083028489999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="definition" destination="ctg-ij-zre" id="N8H-RJ-S6m"/>
-                        <outlet property="sampleSentence" destination="UzE-jc-Egx" id="na4-yl-nnw"/>
-                        <outlet property="word" destination="5q1-ty-vvZ" id="uez-uV-7rp"/>
+                        <outlet property="definition" destination="JWy-mu-5Ui" id="0do-KL-Hmw"/>
+                        <outlet property="example" destination="g5O-rn-fKo" id="cSn-mI-D9i"/>
+                        <outlet property="word" destination="bfO-ni-y0g" id="wOq-kA-jnm"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tMY-QQ-fWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91D-vi-N8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2318" y="1801"/>
+            <point key="canvasLocation" x="252" y="1807"/>
         </scene>
         <!--Results-->
         <scene sceneID="pWK-Dp-Wds">
@@ -498,7 +465,7 @@
                                 </view>
                                 <color key="backgroundColor" red="0.39549386074145132" green="1" blue="0.56514381598898189" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="pEC-GW-cLb" kind="show" id="IpN-2J-mhG"/>
+                                    <segue destination="a7B-tL-qri" kind="show" id="O8d-VV-2go"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LogResult" id="lqS-An-zIi">
