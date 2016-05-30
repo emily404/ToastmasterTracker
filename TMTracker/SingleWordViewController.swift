@@ -13,9 +13,16 @@ class SingleWordViewController: UIViewController {
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var definition: UILabel!
     @IBOutlet weak var example: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let pc = UIPageControl(frame: CGRectMake(0,0, 300, 100))
+        pc.center = CGPointMake(200, 600)
+        pc.numberOfPages = 3
+        self.view.addSubview(pc)
+        pageControl = pc
         
         let wordLabel = UILabel(frame: CGRectMake(0, 0, 300, 21))
         wordLabel.center = CGPointMake(200, 100)

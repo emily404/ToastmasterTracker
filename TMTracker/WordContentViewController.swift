@@ -24,9 +24,9 @@ class WordContentViewController: EZSwipeController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        updateLabels(stackVC)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,19 +47,23 @@ class WordContentViewController: EZSwipeController {
 
 extension WordContentViewController: EZSwipeControllerDataSource {
     func viewControllerData() -> [UIViewController] {
-
-        // declare view controllers
+        
         let redVC = SingleWordViewController()
         redVC.view.backgroundColor = UIColor.redColor()
         let blueVC = SingleWordViewController()
         blueVC.view.backgroundColor = UIColor.blueColor()
         let greenVC = SingleWordViewController()
-        greenVC.view.backgroundColor = UIColor.greenColor()
+        greenVC.view.backgroundColor = UIColor.brownColor()
         
+        return [redVC, blueVC, greenVC]
+
+    }
+    
+    func updateLabels(vcs: [UIViewController]) {
         // get data
-//        dateFormatter.dateFormat = "yyyy-MM-dd"
-//        let today = NSDate()
-//        let todayStr = dateFormatter.stringFromDate(today)
+        //        dateFormatter.dateFormat = "yyyy-MM-dd"
+        //        let today = NSDate()
+        //        let todayStr = dateFormatter.stringFromDate(today)
         // TODO get dynamic dates
         let dates = ["2016-01-01", "2016-01-02", "2016-01-03"]
         
@@ -77,22 +81,15 @@ extension WordContentViewController: EZSwipeControllerDataSource {
         }
         
         dispatch_group_notify(requestGroup, dispatch_get_main_queue()) {
-            redVC.word.text = self.words[0]
-            blueVC.word.text = self.words[1]
-            greenVC.word.text = self.words[2]
-            
-            redVC.definition.text = self.definitions[0]
-            blueVC.definition.text = self.definitions[1]
-            greenVC.definition.text = self.definitions[2]
-            
-            redVC.example.text = self.exampleSentences[0]
-            blueVC.example.text = self.exampleSentences[1]
-            greenVC.example.text = self.exampleSentences[2]
+            for (index,vc) in vcs.enumerate() {
+                if let castedVC = vc as? SingleWordViewController {
+                    castedVC.word.text = self.words[index]
+                    castedVC.definition.text = self.definitions[index]
+                    castedVC.example.text = self.exampleSentences[index]
+                    
+                }
+            }
         }
-        
-        
-        return [redVC, blueVC, greenVC]
-
     }
     
     
@@ -117,6 +114,15 @@ extension WordContentViewController: EZSwipeControllerDataSource {
                     
                     completionHandler(success: true)
                 }
+        }
+    }
+    
+    func changedToPageIndex(index: Int) {
+
+        // change page control
+        // TODO: can improve on animation
+        if let singleVC = stackVC[index] as? SingleWordViewController {
+            singleVC.pageControl.currentPage = index
         }
     }
     
