@@ -20,7 +20,6 @@ class SingleWordViewController: UIViewController {
         
         let pc = UIPageControl(frame: CGRectMake(0,0, 300, 100))
         pc.center = CGPointMake(200, 600)
-        pc.numberOfPages = 3
         self.view.addSubview(pc)
         pageControl = pc
         

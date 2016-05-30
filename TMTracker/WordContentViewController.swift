@@ -60,12 +60,16 @@ extension WordContentViewController: EZSwipeControllerDataSource {
     }
     
     func updateLabels(vcs: [UIViewController]) {
-        // get data
-        //        dateFormatter.dateFormat = "yyyy-MM-dd"
-        //        let today = NSDate()
-        //        let todayStr = dateFormatter.stringFromDate(today)
-        // TODO get dynamic dates
-        let dates = ["2016-01-01", "2016-01-02", "2016-01-03"]
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let today = NSDate()
+        let yesterday = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -1, toDate: today, options: NSCalendarOptions(rawValue: 0))
+        let tomorrow = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: 1, toDate: today, options: NSCalendarOptions(rawValue: 0))
+        
+        let todayStr = dateFormatter.stringFromDate(today)
+        let yesterdayStr = dateFormatter.stringFromDate(yesterday!)
+        let tomorrowStr = dateFormatter.stringFromDate(tomorrow!)
+
+        let dates = [yesterdayStr, todayStr, tomorrowStr]
         
         let requestGroup = dispatch_group_create()
         for date in dates {
@@ -86,7 +90,8 @@ extension WordContentViewController: EZSwipeControllerDataSource {
                     castedVC.word.text = self.words[index]
                     castedVC.definition.text = self.definitions[index]
                     castedVC.example.text = self.exampleSentences[index]
-                    
+                    castedVC.pageControl.numberOfPages = vcs.count
+                    castedVC.pageControl.currentPage = index
                 }
             }
         }
@@ -100,7 +105,6 @@ extension WordContentViewController: EZSwipeControllerDataSource {
                 
                 if let JSON = response.result.value {
                     
-                    print(JSON["word"]!)
                     guard let word = JSON["word"]!,
                         let definition = JSON["definitions"]!![0]["text"]!,
                         let example = JSON["examples"]!![0]["text"] else {
@@ -114,15 +118,6 @@ extension WordContentViewController: EZSwipeControllerDataSource {
                     
                     completionHandler(success: true)
                 }
-        }
-    }
-    
-    func changedToPageIndex(index: Int) {
-
-        // change page control
-        // TODO: can improve on animation
-        if let singleVC = stackVC[index] as? SingleWordViewController {
-            singleVC.pageControl.currentPage = index
         }
     }
     
