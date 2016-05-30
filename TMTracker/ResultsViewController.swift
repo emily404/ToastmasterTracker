@@ -80,9 +80,9 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         //TODO: zoom with UIScrollView
         let imageView = sender.view as! UIImageView
         let newImageView = UIImageView(image: imageView.image)
+        newImageView.contentMode = .ScaleAspectFit
         newImageView.frame = self.view.frame
         newImageView.backgroundColor = .blackColor()
-        newImageView.contentMode = .ScaleAspectFit
         newImageView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         newImageView.addGestureRecognizer(tap)
