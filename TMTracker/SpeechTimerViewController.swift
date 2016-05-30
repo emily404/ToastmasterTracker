@@ -7,18 +7,28 @@
 //
 
 import UIKit
-import Foundation
+import AVFoundation
 
 class SpeechTimerViewController: UIViewController {
 
     var counter = 0
     var timer = NSTimer()
-    var secondsLeft = 450 // 07:30
-    let lightChangeInterval = 2 // in seconds
-    var speechTimeLeft = 10 // 7:00
+    // original vars
+//    var secondsLeft = 450 // 07:30
+//    let lightChangeInterval = 60 // in seconds
+//    var speechTimeLeft = 420 // 7:00
+
+    // test vars
+    var secondsLeft = 3
+    let lightChangeInterval = 1
+    var speechTimeLeft = 2
+    
     var minutesLabel = ""
     var secondsLabel = ""
     let screenSize: CGRect = UIScreen.mainScreen().bounds
+    
+    var audioPlayer: AVAudioPlayer?
+    
     
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -30,7 +40,7 @@ class SpeechTimerViewController: UIViewController {
         timer.invalidate()
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(exitTimer))
         self.view.userInteractionEnabled = true
         self.view.addGestureRecognizer(tapGestureRecognizer)
 
@@ -49,11 +59,30 @@ class SpeechTimerViewController: UIViewController {
             secondsLeft -= 1
             speechTimeLeft -= 1
         } else {
+            clappingDown()
             timer.invalidate()
         }
         
         updateTimerLabel()
         
+    }
+    
+    func clappingDown() {
+        let bundle = NSBundle.mainBundle().pathForResource("applause", ofType: "wav")!
+        let clap = NSURL(fileURLWithPath: bundle)
+        
+        do {
+            
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            audioPlayer = try AVAudioPlayer(contentsOfURL: clap)
+            audioPlayer?.numberOfLoops = -1
+            audioPlayer?.play()
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     func updateTimerLabel() {
@@ -75,8 +104,9 @@ class SpeechTimerViewController: UIViewController {
         }
     }
     
-    func imageTapped(sender: UITapGestureRecognizer) {
+    func exitTimer(sender: UITapGestureRecognizer) {
         timer.invalidate()
+        audioPlayer?.stop()
         
         self.navigationController?.popViewControllerAnimated(true)
         self.navigationController?.navigationBarHidden = false
