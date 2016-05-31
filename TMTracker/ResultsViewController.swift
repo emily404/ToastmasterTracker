@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
@@ -16,6 +17,7 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
     ]
     let fillerPickerData = [["0","1","2","3","4","5","10","15","20"]]
     
+    @IBOutlet weak var saveResult: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var fillerCountPicker: UIPickerView!
@@ -31,6 +33,16 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         }
     }
 
+    @IBAction func saveResult(sender: UIBarButtonItem) {
+        print("saving result")
+        let roleLog = RoleLog()
+        roleLog.name = "speaker"
+        let realm = try! Realm()
+        try! realm.write {
+            print("write to realm")
+            realm.add(roleLog)
+        }
+    }
     
     //MARK -Instance Methods
     func updateLabel(){
@@ -126,16 +138,6 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -401,11 +401,18 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Results" id="9hG-qJ-Kvw"/>
+                    <navigationItem key="navigationItem" title="Results" id="9hG-qJ-Kvw">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="ckm-Dg-ahM">
+                            <connections>
+                                <action selector="saveResult:" destination="oHx-dM-NPH" id="9d8-6Q-6oB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commentsImage" destination="fEt-di-PAP" id="NfC-FO-NGP"/>
                         <outlet property="fillerCountPicker" destination="Dfx-ww-cyb" id="mpY-0f-VxV"/>
+                        <outlet property="saveResult" destination="ckm-Dg-ahM" id="FVA-HN-Q5G"/>
                         <outlet property="textView" destination="m9e-qX-Dex" id="T4A-LB-xgS"/>
                         <outlet property="timePicker" destination="DbC-fy-vAp" id="voJ-Y8-jTo"/>
                     </connections>
@@ -439,6 +446,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6Nq-fT-u9c">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99157944527380759" green="1" blue="0.97776974247624271" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MNt-Vy-4w0">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>

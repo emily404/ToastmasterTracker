@@ -15,6 +15,14 @@ class MainNavViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let flow = collectionViewLayout as? UICollectionViewFlowLayout {
+            flow.itemSize = CGSize(width: 100, height: 100)
+            // margin of the collection of cells
+            flow.sectionInset = UIEdgeInsets(top: 100.0, left: 60.0, bottom: 100.0, right: 60.0)
+            flow.minimumLineSpacing = 50 // cell spacing
+        }
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,12 +61,17 @@ class MainNavViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        // TODO: can I use same cell, and populate each with different action segue?
+
         let reuseIdentifier = navMenuItem[indexPath.section][indexPath.item]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
     
         // Configure the cell
-    
+        let title = UILabel(frame: CGRectMake(0, 0, cell.bounds.size.width, 40))
+        title.lineBreakMode = .ByClipping
+        title.text = reuseIdentifier
+        title.font = UIFont(name: "Arial", size: 15)
+        cell.contentView.addSubview(title)
+        
         return cell
     }
 
