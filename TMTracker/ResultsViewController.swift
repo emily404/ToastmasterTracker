@@ -11,6 +11,11 @@ import RealmSwift
 
 class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    var min: Int = 0
+    var sec: Int = 0
+    var filler: Int = 0
+    var date = ""
+    
     let timePickerData = [
         ["0m","1m","2m","3m","5m","6m","7m"],
         ["10s","20s","30s","40s","50s"]
@@ -21,6 +26,7 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var fillerCountPicker: UIPickerView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     var imagePickerController : UIImagePickerController!
     @IBOutlet var commentsImage: UIImageView!
@@ -37,18 +43,36 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         print("saving result")
         let roleLog = RoleLog()
         roleLog.name = "speaker"
+        roleLog.minute = min
+        roleLog.second = sec
+        roleLog.fillerCount = filler
+        roleLog.dateAdded = date
         let realm = try! Realm()
         try! realm.write {
-            print("write to realm")
             realm.add(roleLog)
         }
     }
     
     //MARK -Instance Methods
-    func updateLabel(){
-        let min = timePickerData[0][timePicker.selectedRowInComponent(0)]
-        let sec = timePickerData[1][timePicker.selectedRowInComponent(1)]
+    func pickerViewUpdate(){
+        let minStr = timePickerData[0][timePicker.selectedRowInComponent(0)]
+        let secStr = timePickerData[1][timePicker.selectedRowInComponent(1)]
+        min = Int(minStr.stringByReplacingOccurrencesOfString("m", withString: ""))!
+        sec = Int(secStr.stringByReplacingOccurrencesOfString("s", withString: ""))!
         print(min + sec)
+        
+        let fillerStr = fillerPickerData[0][fillerCountPicker.selectedRowInComponent(0)]
+        filler = Int(fillerStr)!
+        print(filler)
+    }
+    
+    func datePickerUpdate() {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        date = dateFormatter.stringFromDate(datePicker.date)
+        print(date)
+        
     }
     
     override func viewDidLoad() {
@@ -62,7 +86,11 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         timePicker.selectRow(4, inComponent: 0, animated: false)
         timePicker.selectRow(2, inComponent: 1, animated: false)
         fillerCountPicker.selectRow(5, inComponent: 0, animated: false)
-        updateLabel()
+        datePicker.addTarget(self, action: #selector(datePickerChanged), forControlEvents: UIControlEvents.ValueChanged)
+
+        
+        pickerViewUpdate()
+        datePickerUpdate()
         
         imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -131,7 +159,11 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        updateLabel()
+        pickerViewUpdate()
+    }
+    
+    func datePickerChanged(datePicker:UIDatePicker) {
+        datePickerUpdate()
     }
 
     override func didReceiveMemoryWarning() {

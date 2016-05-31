@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Roles-->
@@ -298,28 +297,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection id="aaS-sS-PkM">
+                            <tableViewSection headerTitle="Date" id="aaS-sS-PkM">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="6Lw-dV-j0Q">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="88"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Lw-dV-j0Q" id="8y5-ye-5Wf">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m9e-qX-Dex">
-                                                    <rect key="frame" x="10" y="9" width="580" height="67.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="UqQ-0N-HZL">
+                                                    <rect key="frame" x="45" y="12" width="288" height="63"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="486425001.21966499">
+                                                        <!--2016-05-31 22:03:21 +0000-->
+                                                    </date>
+                                                </datePicker>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="m9e-qX-Dex" firstAttribute="top" secondItem="8y5-ye-5Wf" secondAttribute="topMargin" constant="2" id="VFR-5D-c1E"/>
-                                                <constraint firstItem="m9e-qX-Dex" firstAttribute="leading" secondItem="8y5-ye-5Wf" secondAttribute="leadingMargin" constant="2" id="pOx-3G-kDD"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="m9e-qX-Dex" secondAttribute="trailing" constant="2" id="sl8-k3-vDz"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="m9e-qX-Dex" secondAttribute="bottom" constant="2" id="syV-wm-Zo9"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -327,7 +320,7 @@
                             <tableViewSection headerTitle="Time" id="ms0-VI-Kvi">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Jd0-gQ-3rA">
-                                        <rect key="frame" x="0.0" y="237" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="251.5" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jd0-gQ-3rA" id="8eS-cQ-9TT">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
@@ -350,7 +343,7 @@
                             <tableViewSection headerTitle="Filler Word Count" id="He2-Nd-h5k">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wza-cx-fdG">
-                                        <rect key="frame" x="0.0" y="347" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="361.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wza-cx-fdG" id="Dab-Sp-Lol">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -373,7 +366,7 @@
                             <tableViewSection headerTitle="Comments" id="ehD-Rn-sHD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="121" id="aqT-0A-VZH">
-                                        <rect key="frame" x="0.0" y="441" width="600" height="121"/>
+                                        <rect key="frame" x="0.0" y="455.5" width="600" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aqT-0A-VZH" id="fgm-xT-Ne9">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="121"/>
@@ -411,9 +404,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commentsImage" destination="fEt-di-PAP" id="NfC-FO-NGP"/>
+                        <outlet property="datePicker" destination="UqQ-0N-HZL" id="uth-bE-w9W"/>
                         <outlet property="fillerCountPicker" destination="Dfx-ww-cyb" id="mpY-0f-VxV"/>
                         <outlet property="saveResult" destination="ckm-Dg-ahM" id="FVA-HN-Q5G"/>
-                        <outlet property="textView" destination="m9e-qX-Dex" id="T4A-LB-xgS"/>
                         <outlet property="timePicker" destination="DbC-fy-vAp" id="voJ-Y8-jTo"/>
                     </connections>
                 </tableViewController>

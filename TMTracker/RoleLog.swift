@@ -13,8 +13,8 @@ class RoleLog: Object {
 
     dynamic var name: String = ""
     dynamic var minute = 0
-    dynamic var seconds = 0
+    dynamic var second = 0
     dynamic var fillerCount = 0
-    dynamic var dateAdded = NSDate()
+    dynamic var dateAdded = ""
 
 }
