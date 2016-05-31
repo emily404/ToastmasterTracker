@@ -15,13 +15,6 @@ class RoleLog: Object {
     dynamic var minute = 0
     dynamic var seconds = 0
     dynamic var fillerCount = 0
-    
-//    init(name: String) {
-//        self.name = name
-//    }
-    
-//    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-//        fatalError("init(realm:schema:) has not been implemented")
-//    }
+    dynamic var dateAdded = NSDate()
 
 }
