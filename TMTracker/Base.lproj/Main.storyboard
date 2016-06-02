@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Roles-->
@@ -223,70 +224,67 @@
             </objects>
             <point key="canvasLocation" x="1642" y="335"/>
         </scene>
-        <!--Word Content View Controller-->
-        <scene sceneID="8c5-UB-0Bu">
+        <!--Word View Controller-->
+        <scene sceneID="Rs9-C7-ufX">
             <objects>
-                <viewController id="a7B-tL-qri" customClass="WordContentViewController" customModule="TMTracker" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WordViewController" id="QUP-Xi-y2B" customClass="WordViewController" customModule="TMTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Yc-iz-W4n"/>
-                        <viewControllerLayoutGuide type="bottom" id="Q5s-wF-y39"/>
+                        <viewControllerLayoutGuide type="top" id="B9h-hw-K3i"/>
+                        <viewControllerLayoutGuide type="bottom" id="7le-U0-hrP"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DIp-Bl-YeZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oVU-YN-r0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="252" y="1127"/>
-        </scene>
-        <!--Single Word View Controller-->
-        <scene sceneID="CNJ-o6-zH6">
-            <objects>
-                <viewController storyboardIdentifier="SingleWordViewController" id="j8N-Tf-HMH" customClass="SingleWordViewController" customModule="TMTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PPv-Ir-obF"/>
-                        <viewControllerLayoutGuide type="bottom" id="fRm-oz-dVj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IR4-0C-Ppq">
+                    <view key="view" contentMode="scaleToFill" id="kaj-1N-1b6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="some word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfO-ni-y0g">
-                                <rect key="frame" x="141" y="167" width="85" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5j-dF-bYF">
+                                <rect key="frame" x="26" y="398" width="245" height="168"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="some definition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWy-mu-5Ui">
-                                <rect key="frame" x="135" y="283" width="118" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptg-KT-dXs">
+                                <rect key="frame" x="20" y="181" width="230" height="153"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="some sample santence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5O-rn-fKo">
-                                <rect key="frame" x="124" y="425" width="176" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxu-j7-AMc">
+                                <rect key="frame" x="26" y="94" width="286" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0LM-HN-QM5">
-                                <rect key="frame" x="296" y="543" width="39" height="37"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.89861326850000001" blue="0.45083028489999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ptg-KT-dXs" secondAttribute="trailing" constant="20" id="1dk-Af-Sv3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u5j-dF-bYF" secondAttribute="trailing" constant="20" id="CEW-Gs-gLo"/>
+                            <constraint firstItem="Ptg-KT-dXs" firstAttribute="top" secondItem="qxu-j7-AMc" secondAttribute="bottom" constant="80" id="Du4-eB-OGx"/>
+                            <constraint firstItem="qxu-j7-AMc" firstAttribute="top" secondItem="B9h-hw-K3i" secondAttribute="bottom" constant="20" id="Kso-tf-et2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qxu-j7-AMc" secondAttribute="trailing" constant="20" id="SnQ-ev-Wti"/>
+                            <constraint firstItem="u5j-dF-bYF" firstAttribute="top" secondItem="Ptg-KT-dXs" secondAttribute="bottom" constant="90" id="dCd-hJ-YeZ"/>
+                            <constraint firstItem="u5j-dF-bYF" firstAttribute="leading" secondItem="kaj-1N-1b6" secondAttribute="leadingMargin" constant="20" id="jBX-p1-XZB"/>
+                            <constraint firstItem="Ptg-KT-dXs" firstAttribute="leading" secondItem="kaj-1N-1b6" secondAttribute="leadingMargin" constant="20" id="lCA-6h-NSz"/>
+                            <constraint firstItem="qxu-j7-AMc" firstAttribute="leading" secondItem="kaj-1N-1b6" secondAttribute="leadingMargin" constant="20" id="y5G-rN-IL9"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="definition" destination="JWy-mu-5Ui" id="0do-KL-Hmw"/>
-                        <outlet property="example" destination="g5O-rn-fKo" id="cSn-mI-D9i"/>
-                        <outlet property="pageControl" destination="0LM-HN-QM5" id="NDv-Be-ezl"/>
-                        <outlet property="word" destination="bfO-ni-y0g" id="wOq-kA-jnm"/>
+                        <outlet property="definition" destination="Ptg-KT-dXs" id="7lL-4T-hlk"/>
+                        <outlet property="exampleSentence" destination="u5j-dF-bYF" id="MIj-Nh-Qz2"/>
+                        <outlet property="word" destination="qxu-j7-AMc" id="NLo-7U-cpR"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="91D-vi-N8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v26-mh-Qa4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="252" y="1807"/>
+            <point key="canvasLocation" x="-386" y="1109"/>
+        </scene>
+        <!--Words Page View Controller-->
+        <scene sceneID="S6m-NB-QJw">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="deV-Z4-1f2" customClass="WordsPageViewController" customModule="TMTracker" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7QV-5Y-Arb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="1109"/>
         </scene>
         <!--Results-->
         <scene sceneID="pWK-Dp-Wds">
@@ -470,7 +468,7 @@
                                 </view>
                                 <color key="backgroundColor" red="0.39549386074145132" green="1" blue="0.56514381598898189" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="a7B-tL-qri" kind="show" id="O8d-VV-2go"/>
+                                    <segue destination="deV-Z4-1f2" kind="show" id="bdC-CB-h7O"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LogResult" id="lqS-An-zIi">

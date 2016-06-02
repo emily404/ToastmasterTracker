@@ -8,18 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5FFC8749BE6D9882A02CE69C /* Pods_TMTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D11B7AD4CC71E1F76ADFB0AA /* Pods_TMTracker.framework */; };
-		EB044A651CFB442B00D48EDF /* WordContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB044A641CFB442B00D48EDF /* WordContentViewController.swift */; };
-		EB044A671CFB4C2300D48EDF /* SingleWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB044A661CFB4C2300D48EDF /* SingleWordViewController.swift */; };
 		EB06507C1CF488B500447C6A /* MainNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06507B1CF488B500447C6A /* MainNavViewController.swift */; };
 		EB0650831CF49D3800447C6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0650811CF49D3800447C6A /* Main.storyboard */; };
 		EB0650851CF5096E00447C6A /* SpeechTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0650841CF5096E00447C6A /* SpeechTimerViewController.swift */; };
+		EB06C6FF1D0052C600A620C3 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C6FE1D0052C600A620C3 /* WordViewController.swift */; };
+		EB06C7011D0052E400A620C3 /* WordsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C7001D0052E400A620C3 /* WordsPageViewController.swift */; };
 		EB0B2AF51CFCFEEC002BD60D /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB0B2AF41CFCFEEC002BD60D /* applause.wav */; };
 		EB0B2AFB1CFDE84A002BD60D /* RoleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B2AFA1CFDE84A002BD60D /* RoleLog.swift */; };
 		EBFD36311C5B14D0008AD593 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD362F1C5B14D0008AD593 /* TextFieldCell.swift */; };
 		EBFD36321C5B14D0008AD593 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBFD36301C5B14D0008AD593 /* TextFieldCell.xib */; };
 		EBFD36341C5B1578008AD593 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD36331C5B1578008AD593 /* ResultsViewController.swift */; };
 		F762C8F31C5B012100125280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762C8F21C5B012100125280 /* AppDelegate.swift */; };
-		F762C8F51C5B012100125280 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762C8F41C5B012100125280 /* ViewController.swift */; };
 		F762C8FA1C5B012100125280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F762C8F91C5B012100125280 /* Assets.xcassets */; };
 		F762C8FD1C5B012100125280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F762C8FB1C5B012100125280 /* LaunchScreen.storyboard */; };
 		F762C9051C5B059400125280 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762C9041C5B059400125280 /* LogViewController.swift */; };
@@ -29,11 +28,11 @@
 		1A795144FA2301400DD7F868 /* Pods-TMTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-TMTracker/Pods-TMTracker.release.xcconfig"; sourceTree = "<group>"; };
 		88FA985B5028850FF0400AD9 /* Pods-TMTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TMTracker/Pods-TMTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		D11B7AD4CC71E1F76ADFB0AA /* Pods_TMTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB044A641CFB442B00D48EDF /* WordContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordContentViewController.swift; sourceTree = "<group>"; };
-		EB044A661CFB4C2300D48EDF /* SingleWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleWordViewController.swift; sourceTree = "<group>"; };
 		EB06507B1CF488B500447C6A /* MainNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavViewController.swift; sourceTree = "<group>"; };
 		EB0650821CF49D3800447C6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB0650841CF5096E00447C6A /* SpeechTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechTimerViewController.swift; sourceTree = "<group>"; };
+		EB06C6FE1D0052C600A620C3 /* WordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		EB06C7001D0052E400A620C3 /* WordsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsPageViewController.swift; sourceTree = "<group>"; };
 		EB0B2AF41CFCFEEC002BD60D /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
 		EB0B2AFA1CFDE84A002BD60D /* RoleLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleLog.swift; sourceTree = "<group>"; };
 		EBFD362F1C5B14D0008AD593 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
@@ -41,7 +40,6 @@
 		EBFD36331C5B1578008AD593 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		F762C8EF1C5B012100125280 /* TMTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F762C8F21C5B012100125280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F762C8F41C5B012100125280 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F762C8F91C5B012100125280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F762C8FC1C5B012100125280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F762C8FE1C5B012100125280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,11 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				F762C8F21C5B012100125280 /* AppDelegate.swift */,
-				F762C8F41C5B012100125280 /* ViewController.swift */,
 				EB0650811CF49D3800447C6A /* Main.storyboard */,
+				EB06C6FE1D0052C600A620C3 /* WordViewController.swift */,
+				EB06C7001D0052E400A620C3 /* WordsPageViewController.swift */,
 				EB06507B1CF488B500447C6A /* MainNavViewController.swift */,
-				EB044A641CFB442B00D48EDF /* WordContentViewController.swift */,
-				EB044A661CFB4C2300D48EDF /* SingleWordViewController.swift */,
 				EB0650841CF5096E00447C6A /* SpeechTimerViewController.swift */,
 				EB0B2AF41CFCFEEC002BD60D /* applause.wav */,
 				F762C9041C5B059400125280 /* LogViewController.swift */,
@@ -250,12 +247,11 @@
 			files = (
 				F762C9051C5B059400125280 /* LogViewController.swift in Sources */,
 				EB06507C1CF488B500447C6A /* MainNavViewController.swift in Sources */,
-				EB044A651CFB442B00D48EDF /* WordContentViewController.swift in Sources */,
 				EB0650851CF5096E00447C6A /* SpeechTimerViewController.swift in Sources */,
-				F762C8F51C5B012100125280 /* ViewController.swift in Sources */,
+				EB06C6FF1D0052C600A620C3 /* WordViewController.swift in Sources */,
 				F762C8F31C5B012100125280 /* AppDelegate.swift in Sources */,
+				EB06C7011D0052E400A620C3 /* WordsPageViewController.swift in Sources */,
 				EBFD36341C5B1578008AD593 /* ResultsViewController.swift in Sources */,
-				EB044A671CFB4C2300D48EDF /* SingleWordViewController.swift in Sources */,
 				EB0B2AFB1CFDE84A002BD60D /* RoleLog.swift in Sources */,
 				EBFD36311C5B14D0008AD593 /* TextFieldCell.swift in Sources */,
 			);
