@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
-class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ResultViewController: UITableViewController,UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     var min: Int = 0
     var sec: Int = 0
@@ -22,7 +21,6 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
     ]
     let fillerPickerData = [["0","1","2","3","4","5","10","15","20"]]
     
-    @IBOutlet weak var saveResult: UIBarButtonItem!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var timePicker: UIPickerView!
     @IBOutlet weak var fillerCountPicker: UIPickerView!
@@ -38,20 +36,6 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
             print("present camera view")
         }
     }
-
-    @IBAction func saveResult(sender: UIBarButtonItem) {
-        print("saving result")
-        let roleLog = RoleLog()
-        roleLog.name = "speaker"
-        roleLog.minute = min
-        roleLog.second = sec
-        roleLog.fillerCount = filler
-        roleLog.dateAdded = date
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(roleLog)
-        }
-    }
     
     //MARK -Instance Methods
     func pickerViewUpdate(){
@@ -59,11 +43,9 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         let secStr = timePickerData[1][timePicker.selectedRowInComponent(1)]
         min = Int(minStr.stringByReplacingOccurrencesOfString("m", withString: ""))!
         sec = Int(secStr.stringByReplacingOccurrencesOfString("s", withString: ""))!
-        print(min + sec)
         
         let fillerStr = fillerPickerData[0][fillerCountPicker.selectedRowInComponent(0)]
         filler = Int(fillerStr)!
-        print(filler)
     }
     
     func datePickerUpdate() {
@@ -71,7 +53,6 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         date = dateFormatter.stringFromDate(datePicker.date)
-        print(date)
         
     }
     
@@ -88,7 +69,6 @@ class ResultsViewController: UITableViewController,UIPickerViewDataSource,UIPick
         fillerCountPicker.selectRow(5, inComponent: 0, animated: false)
         datePicker.addTarget(self, action: #selector(datePickerChanged), forControlEvents: UIControlEvents.ValueChanged)
 
-        
         pickerViewUpdate()
         datePickerUpdate()
         

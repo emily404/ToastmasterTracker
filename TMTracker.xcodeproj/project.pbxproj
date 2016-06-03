@@ -15,13 +15,14 @@
 		EB06C7011D0052E400A620C3 /* WordsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB06C7001D0052E400A620C3 /* WordsPageViewController.swift */; };
 		EB0B2AF51CFCFEEC002BD60D /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB0B2AF41CFCFEEC002BD60D /* applause.wav */; };
 		EB0B2AFB1CFDE84A002BD60D /* RoleLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0B2AFA1CFDE84A002BD60D /* RoleLog.swift */; };
+		EB42EC3F1D007A780097308C /* RoleResultPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42EC3E1D007A780097308C /* RoleResultPageViewController.swift */; };
 		EBFD36311C5B14D0008AD593 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD362F1C5B14D0008AD593 /* TextFieldCell.swift */; };
 		EBFD36321C5B14D0008AD593 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBFD36301C5B14D0008AD593 /* TextFieldCell.xib */; };
-		EBFD36341C5B1578008AD593 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD36331C5B1578008AD593 /* ResultsViewController.swift */; };
+		EBFD36341C5B1578008AD593 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD36331C5B1578008AD593 /* ResultViewController.swift */; };
 		F762C8F31C5B012100125280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762C8F21C5B012100125280 /* AppDelegate.swift */; };
 		F762C8FA1C5B012100125280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F762C8F91C5B012100125280 /* Assets.xcassets */; };
 		F762C8FD1C5B012100125280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F762C8FB1C5B012100125280 /* LaunchScreen.storyboard */; };
-		F762C9051C5B059400125280 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762C9041C5B059400125280 /* LogViewController.swift */; };
+		F762C9051C5B059400125280 /* RoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F762C9041C5B059400125280 /* RoleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,15 +36,16 @@
 		EB06C7001D0052E400A620C3 /* WordsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsPageViewController.swift; sourceTree = "<group>"; };
 		EB0B2AF41CFCFEEC002BD60D /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
 		EB0B2AFA1CFDE84A002BD60D /* RoleLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleLog.swift; sourceTree = "<group>"; };
+		EB42EC3E1D007A780097308C /* RoleResultPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleResultPageViewController.swift; sourceTree = "<group>"; };
 		EBFD362F1C5B14D0008AD593 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		EBFD36301C5B14D0008AD593 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
-		EBFD36331C5B1578008AD593 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		EBFD36331C5B1578008AD593 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		F762C8EF1C5B012100125280 /* TMTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F762C8F21C5B012100125280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F762C8F91C5B012100125280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F762C8FC1C5B012100125280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F762C8FE1C5B012100125280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F762C9041C5B059400125280 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		F762C9041C5B059400125280 /* RoleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +100,14 @@
 			children = (
 				F762C8F21C5B012100125280 /* AppDelegate.swift */,
 				EB0650811CF49D3800447C6A /* Main.storyboard */,
+				EB06507B1CF488B500447C6A /* MainNavViewController.swift */,
+				F762C9041C5B059400125280 /* RoleViewController.swift */,
+				EB42EC3E1D007A780097308C /* RoleResultPageViewController.swift */,
+				EBFD36331C5B1578008AD593 /* ResultViewController.swift */,
 				EB06C6FE1D0052C600A620C3 /* WordViewController.swift */,
 				EB06C7001D0052E400A620C3 /* WordsPageViewController.swift */,
-				EB06507B1CF488B500447C6A /* MainNavViewController.swift */,
 				EB0650841CF5096E00447C6A /* SpeechTimerViewController.swift */,
 				EB0B2AF41CFCFEEC002BD60D /* applause.wav */,
-				F762C9041C5B059400125280 /* LogViewController.swift */,
-				EBFD36331C5B1578008AD593 /* ResultsViewController.swift */,
 				EB0B2AFA1CFDE84A002BD60D /* RoleLog.swift */,
 				EBFD362F1C5B14D0008AD593 /* TextFieldCell.swift */,
 				EBFD36301C5B14D0008AD593 /* TextFieldCell.xib */,
@@ -245,13 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F762C9051C5B059400125280 /* LogViewController.swift in Sources */,
+				F762C9051C5B059400125280 /* RoleViewController.swift in Sources */,
 				EB06507C1CF488B500447C6A /* MainNavViewController.swift in Sources */,
 				EB0650851CF5096E00447C6A /* SpeechTimerViewController.swift in Sources */,
 				EB06C6FF1D0052C600A620C3 /* WordViewController.swift in Sources */,
+				EB42EC3F1D007A780097308C /* RoleResultPageViewController.swift in Sources */,
 				F762C8F31C5B012100125280 /* AppDelegate.swift in Sources */,
 				EB06C7011D0052E400A620C3 /* WordsPageViewController.swift in Sources */,
-				EBFD36341C5B1578008AD593 /* ResultsViewController.swift in Sources */,
+				EBFD36341C5B1578008AD593 /* ResultViewController.swift in Sources */,
 				EB0B2AFB1CFDE84A002BD60D /* RoleLog.swift in Sources */,
 				EBFD36311C5B14D0008AD593 /* TextFieldCell.swift in Sources */,
 			);

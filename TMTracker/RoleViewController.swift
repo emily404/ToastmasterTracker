@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogViewController: UITableViewController {
+class RoleViewController: UITableViewController {
     
     var roles : Set<String> = []
 
@@ -27,7 +27,6 @@ class LogViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -48,7 +47,10 @@ class LogViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print(roles)
+        
+        let resultsVC = segue.destinationViewController as! RoleResultPageViewController
+        resultsVC.roles = Array(roles)
+
     }
     
 }
