@@ -35,15 +35,15 @@ class RoleResultPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let newButton = UIBarButtonItem(title: self.iterationButtonText(currentPage), style: UIBarButtonItemStyle.Done, target: self, action: #selector(saveResult))
+        self.navigationItem.rightBarButtonItem = newButton;
+        self.navigationItem.title = roles[currentPage]
+        
         if let vc = viewControllersData.first {
             setViewControllers([vc],
                                direction: .Forward,
                                animated: true,
                                completion: nil)
-            let newButton = UIBarButtonItem(title: self.iterationButtonText(currentPage), style: UIBarButtonItemStyle.Done, target: self, action: #selector(saveResult))
-            self.navigationItem.rightBarButtonItem = newButton;
-            self.navigationItem.title = roles[currentPage]
-
         }
         
     }
@@ -81,7 +81,7 @@ class RoleResultPageViewController: UIPageViewController {
 
                 self.navigationItem.rightBarButtonItem?.title = iterationButtonText(nextPage)
                 self.navigationItem.title = roles[nextPage]
-                
+
                 setViewControllers([nextVC],
                                    direction: .Forward,
                                    animated: true,
