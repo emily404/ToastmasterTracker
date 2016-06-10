@@ -11,15 +11,15 @@ import UIKit
 
 class MainNavViewController: UICollectionViewController {
 
-    let navMenuItem = [["TimerTool", "WordOfTheDay", "LogResult"]]
+    let navMenuItem = [["TimerTool", "WordOfTheDay", "LogResult", "GrammarianTool"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let flow = collectionViewLayout as? UICollectionViewFlowLayout {
-            flow.itemSize = CGSize(width: 100, height: 100)
+            flow.itemSize = CGSize(width: 60, height: 60)
             // margin of the collection of cells
-            flow.sectionInset = UIEdgeInsets(top: 100.0, left: 60.0, bottom: 100.0, right: 60.0)
+            flow.sectionInset = UIEdgeInsets(top: 60.0, left: 60.0, bottom: 60.0, right: 60.0)
             flow.minimumLineSpacing = 50 // cell spacing
         }
 

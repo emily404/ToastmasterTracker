@@ -14,14 +14,18 @@ class SpeechTimerViewController: UIViewController {
     var counter = 0
     var timer = NSTimer()
     // original vars
+    
+//    var totalTime = 450
 //    var secondsLeft = 450 // 07:30
 //    let lightChangeInterval = 60 // in seconds
 //    var speechTimeLeft = 420 // 7:00
 
     // test vars
+    var totalTime = 3
     var secondsLeft = 3
     let lightChangeInterval = 1
     var speechTimeLeft = 2
+    var speechTimeElapsed = 0
     
     var minutesLabel = ""
     var secondsLabel = ""
@@ -86,8 +90,9 @@ class SpeechTimerViewController: UIViewController {
     }
     
     func updateTimerLabel() {
-        minutesLabel = String(format: "%02d",(secondsLeft / 60) % 60)
-        secondsLabel = String(format: "%02d", secondsLeft % 60)
+        let timeElasped = totalTime - secondsLeft
+        minutesLabel = String(format: "%02d",(timeElasped / 60) % 60)
+        secondsLabel = String(format: "%02d", timeElasped % 60)
         timerLabel.text = "\(minutesLabel)" + ":" + "\(secondsLabel)"
     }
     

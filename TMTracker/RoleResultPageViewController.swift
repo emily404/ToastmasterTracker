@@ -93,7 +93,7 @@ class RoleResultPageViewController: UIPageViewController {
                 // write all logs to local at once so that if user aborts halfway there will be no data write
                 let realm = try! Realm()
                 try! realm.write {
-                    print("writing to Realm")
+                    print("writing role log to Realm")
                     for roleLog in roleLogs {
                         print(roleLog)
                         realm.add(roleLog)

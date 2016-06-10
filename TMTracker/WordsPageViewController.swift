@@ -31,7 +31,7 @@ class WordsPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setWordData()
+//        setWordData()
         
         if let vc = viewControllersData.first {
             setViewControllers([vc],
@@ -78,7 +78,7 @@ class WordsPageViewController: UIPageViewController {
         }
         
         dispatch_group_notify(requestGroup, dispatch_get_main_queue()) {
-            self.updateLabel(self.currentPage)
+//            self.updateLabel(self.currentPage)
         }
     }
     
